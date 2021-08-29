@@ -12,24 +12,16 @@ namespace EzShop_Data.EF
     {
         public EzShopDBContext CreateDbContext(string[] args)
         {
-            try
-            {
-                var configuration = new ConfigurationBuilder()
+            var configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsetting.json")
                     .Build();
-                var connectionString = configuration.GetConnectionString("eShopDatabase");
+            var connectionString = configuration.GetConnectionString("eShopDatabase");
 
-                var optionsBuilder = new DbContextOptionsBuilder<EzShopDBContext>();
-                optionsBuilder.UseSqlServer(connectionString);
+            var optionsBuilder = new DbContextOptionsBuilder<EzShopDBContext>();
+            optionsBuilder.UseSqlServer(connectionString);
 
-                return new EzShopDBContext(optionsBuilder.Options);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            return new EzShopDBContext(optionsBuilder.Options);
         }
     }
 }

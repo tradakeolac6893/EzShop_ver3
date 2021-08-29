@@ -1,4 +1,5 @@
 ﻿using EzShop_Data.Entities;
+using EzShop_Data.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -16,7 +17,7 @@ namespace EzShop_Data.Configuration
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).UseIdentityColumn();
-            //builder.Property(x => x.Status).HasDefaultValue(Status.Active);
+            builder.Property(x => x.Status).HasDefaultValue(Status.Active);
         }
     }
 }

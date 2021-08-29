@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "eShopSolutionDb": "Server=.;Database=eShopSolution_v3;Trusted_Connection=True;"
-  }
-}
